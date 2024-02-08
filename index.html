@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rethink+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="manifest" href="manifest.json">
+    <title>Controle financeiro</title>
+    <script>
+      if (typeof navigator.serviceWorker !== 'undefined'){
+          navigator.serviceWorker.register('pwabuilder-sw.js')
+      }
+    </script>
+    <link rel="icon" type="image/png" href="src/dinheiro.png"></head>
+</head>
+
+<body>
+    <header>
+        Controle financeiro
+        <img src="src/dinheiro.png" alt="dinheiro" id="icon-dinheiro">
+    </header>
+    <div class="container">
+        <label>
+            <button class="btn-mes" id="mesAnterior" onclick="mesAnterior()">◄ Mês Anterior</button>
+            <label for="calendario">
+                <input class="input-calendario flatpickr-input" id="calendario" type="date" readonly="readonly">
+            </label>
+            <button class="btn-mes" id="proximoMes" onclick="proximoMes()">Próximo Mês ►</button>
+
+        </label>
+        
+        <input class="input-descricao" id="input-nome-compra" placeholder="Descrição">
+        <input class="input-compra" id="input-valor-compra" placeholder="Valor"><!-- Example markup for the input fields -->
+        <input type="number" class="input-parcelas" id="input-num-parcelas" placeholder="Número de parcelas" />
+        
+        <button id="button-add-compra">Adicionar</button>
+
+        <ul id="lista-dividas">
+           
+        </ul>
+       
+        <button id="btnMostrarContasPagas" onclick="alternarVisibilidadeContasPagas()">Mostrar Contas Pagas</button>
+
+        <ul id="dividas-pagas">
+        
+        </ul>
+
+        <h2>Valor total gastos: </h2>
+        <p id="totalGasto">R$0,00</p>
+    </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="pwabuilder-sw.js"></script>
+<script src="index.js"></script>
+</html>

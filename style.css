@@ -1,0 +1,295 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    font-family: 'Rethink Sans', sans-serif;
+}
+
+body{
+    background-color: #c7c7c7;
+}
+
+/*
+Cores:
+header - #285C4F
+body -  #c7c7c7;
+div - #F2E3D5
+calendario - #419184
+dividas adicionadas - #f2f2f2
+divida na data de vencimento - #ffff80
+divida atrasada - #e99191
+divida paga - #8fa555;
+*/
+
+header{
+    background-color: #285C4F;
+    height: 66px;
+    width: 510px;
+    padding: 20px;
+    margin: 100px auto 0;
+    color: #fff;
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#icon-dinheiro {
+    height: 55px; /* Ajuste a altura conforme necessário */
+    margin-left: 20px; /* Espaçamento à direita da imagem */
+}
+.container{
+    width: 510px;
+    background-color: #F2E3D5;
+    padding: 20px;
+    margin: 0px auto 0;
+}
+.label {
+    display: block;
+    margin-bottom: 5px;
+    color: #000000;
+    font-size: 22px;
+}
+  
+.input {
+    width: 100%; /* Certifica-se de que os inputs ocupem toda a largura */
+}
+
+#calendario, .btn-mes, .flatpickr-mobile{
+    background-color: #419184;
+    padding: 6px;
+    width: 120px;
+    color: #ffffff;
+    font-size: 18px;
+    border: none;
+    font-weight: 600;
+    margin-left: 10px;
+    text-align: center;
+    border-radius: 5px;
+}
+::-webkit-calendar-picker-indicator{
+    display: none;
+    background-color: #ffffff;
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.input-compra, .input-parcelas, .input-descricao{
+    display: none;
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+    padding-left: 10px;
+    width: 300px;
+    height: 40px;
+}
+.btn-mes{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid 1px;
+    border-radius: 5px;
+    padding-left: 10px;
+    width: 150px;
+    height: 40px;
+}
+.btnEditar{
+    background-color: #285C4F;
+    border: transparent;
+    padding: 3px;
+    color: #ffffff;
+    font-size: 16px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#button-add-compra, #btnMostrarContasPagas{
+    margin-top: 10px;
+    margin-bottom: 5px;
+    position: relative;
+    display: block;
+    left: 37.5%;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    height: 50px;
+    font-size: 17px;
+    padding: 0 15px;
+    background-color: #285C4F;
+    color: #ffffff;
+}
+#button-add-compra:hover, #btnMostrarContasPagas:hover{
+    background-color: #285C4F
+}
+
+#button-add-compra:active, #btnMostrarContasPagas:active{
+  background-color: #1a3831;
+  box-shadow: 0 3px #c0c0c0;
+  transform: translateY(1.0px);
+}
+
+h2{
+    font-size: 26px;
+}
+
+#btnMostrarContasPagas{
+    left: 29.5%;
+    padding: 0 10px;
+}
+#lista-dividas{
+    width: 100%;
+    list-style: none;
+    margin-top: 25px;
+}
+.contasAdicionadas{
+    background-color: #f2f2f2;
+    height: auto;
+    box-shadow: 1px 4px 10px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 0px 3px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.trasacoes{
+    width: 120px;
+    padding-bottom: 6px;
+    color: #000;
+    font-size: 18px;
+    white-space: pre-line;
+    word-wrap: break-word; /* Adiciona quebra de palavra */
+}
+
+.checked-icon, .trash-icon, .edit-icon{
+    padding: 0 3px;
+    height: 30px;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+}
+.contasAdicionadas:hover img{
+    opacity: 1;
+}
+
+#totalGasto{
+    font-size: 22px;
+}
+
+.done{
+    background-color: #8fa555;
+    text-decoration: line-through;
+}
+.atrasada {
+    background-color: #e99191; /* ou qualquer outra cor que desejar para destacar como atrasada */
+}
+
+.vence-hoje {
+background-color: #ffff80; /* Amarelo claro para indicar vencimento hoje */
+}
+
+@media only screen and (max-width: 600px){
+    body{
+        background-color:  #F2E3D5;
+        /*background-color: rgb(199, 199, 199);*/
+    }
+    header{
+        width: 100%;
+        height: auto;
+        padding: 10px;
+        margin: 0 auto 0;
+        font-size: 24px;
+        display: block;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .container{
+        width: auto;
+        height: auto;
+        padding: 10px;
+        margin: 0 auto 0;
+        font-size: 24px;
+        text-align: center;
+    }
+    #button-add-compra{
+        display: flex;
+        align-items: center;
+    }
+    #button-add-compra:hover {
+        background-color: #285C4F
+    }
+    
+    #button-add-compra:active {
+      background-color: #1a3831;
+      box-shadow: 0 3px #c0c0c0;
+      transform: translateY(1.0px);
+    }
+    .btn-mes{
+        font-size: 12px;
+        width: 28%;
+        display: inline-block;
+    }
+    .flatpickr-mobile{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 25%;
+        padding: 10px;
+        font-size: 12px;
+        align-items: center;
+        position: relative;
+    }
+    #btnMostrarContasPagas{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 40%;
+        font-size: 13px;
+        align-items: center;
+        position: relative;
+    }
+    .calendarioInput{
+        margin-top: 10px;
+        width: 60%;
+        align-items: center;
+        position: relative;
+        margin-bottom: 5px;
+        color: #fff;
+        font-size: 22px;
+    }
+    .checked-icon, .trash-icon, .edit-icon{
+        padding: 0 3px;
+        height: 20px;
+        opacity: 0;
+        transition: opacity 0.6s ease-in-out;
+    }
+    .contasAdicionada{
+        width: 100%;
+    }
+    .trasacoes{
+        width: 80px;
+        padding-bottom: 6px;
+        color: #000;
+        font-size: 12px;
+        white-space: pre-line;
+        word-wrap: break-word; /* Adiciona quebra de palavra */
+    }
+    .btnEditar{
+        border-radius: 3px;
+        background-color: #285C4F;
+        border: transparent;
+        padding: 3px;
+        color: #ffffff;
+        font-size: 12px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    h2{
+        font-size: 22px;
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "background_color": "#5f976c",
+    "dir": "ltr",
+    "display": "standalone",
+    "name": "Controle financeiro",
+    "orientation": "any",
+    "scope": "/",
+    "short_name": "Controle financeiro",
+    "start_url": "/",
+    "theme_color": "#61e065",
+    "icons": [
+      {
+        "src": "src/dinheiro.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "lang": "pt",
+    "description": "Controle suas dividas, de uma forma facil e rapida!",
+    "categories": [
+      "business",
+      "finance",
+      "utilities"
+    ]
+  }
